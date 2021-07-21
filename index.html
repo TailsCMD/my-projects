@@ -5,12 +5,12 @@
     <meta name="generator" content="Hugo 0.69.0" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
-    <title>Lumia WOA Project</title>
+    <title>Mis proyectos</title>
     <link rel="stylesheet"
         href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
     <link rel="stylesheet" href="https://woa-project.github.io/LumiaWOA/css/raster.grid.css" />
     <link rel="stylesheet" href="https://woa-project.github.io/LumiaWOA/css/style.min.css" />
-    <meta name="description" content="Full Windows for Lumia">
+    <meta name="description" content="Mis proyectos para uso personal">
     <link rel="canonical" href="https://woa-project.github.io/LumiaWOA/">
     <meta property="og:title" content="Lumia WOA Project" />
     <meta property="og:description" content="Full Windows for Lumia" />
@@ -71,12 +71,42 @@
             <r-grid columns=2>
                 <r-cell span-s=row>
                     <h1 style="margin: 0"></h1>
-                    <h2>The Windows You Know and Love</h2>
-                    <p>This project brings the Windows desktop operating system to your Lumia 950 and Lumia 950 XL.
+                    <h2>Discord Developers</h2>
+                    <p>Abre Discord, presiona CRTL+SHIFT+I
                     </p>
-                    <p>It's the same edition of Windows you're used to on your traditional laptop or desktop
-                        computer, but it's the version for ARM64 (armv8a) processors.</p>
-                    <p>It can run ARM64, ARM and x86 applications (the later via emulation) just fine.<sup>1</sup></p>
+                    <p>Escribe esto: </p>
+                    <p>const DI = window.DiscordInternals;
+const hasLib = !!(DI && DI.versionCompare && DI.versionCompare(DI.version || "", "1.9") >= 0);
+    const WebpackModules = hasLib && DI.WebpackModules || (() => {
+
+        const req = typeof(webpackJsonp) == "function" ? webpackJsonp([], {
+                '__extra_id__': (module, exports, req) => exports.default = req
+        }, ['__extra_id__']).default : webpackJsonp.push([[], {
+                '__extra_id__': (module, exports, req) => module.exports = req
+        }, [['__extra_id__']]]);
+        delete req.m['__extra_id__'];
+        delete req.c['__extra_id__'];
+        const find = (filter, options = {}) => {
+            const {cacheOnly = false} = options;
+            for (let i in req.c) {
+                if (req.c.hasOwnProperty(i)) {
+                    let m = req.c[i].exports;
+                    if (m && m.__esModule && m.default && filter(m.default))
+                        return m.default;
+                    if (m && filter(m))
+                        return m;
+                }
+            }
+            if (cacheOnly) {
+                console.warn('Cannot find loaded module in cache');
+                return null;
+            }
+            console.warn('Cannot find loaded module in cache. Loading all modules may have unexpected side effects');
+            for (let i = 0; i < req.m.length; ++i) {
+                let m = req(i);
+                if (m && m.__esModule && m.default && filter(m.default))
+                    return m.default;
+                if (m && filter(m))<sup>1</sup></p>
                 </r-cell>
                 <r-cell span-s=row>
                     <figure>
